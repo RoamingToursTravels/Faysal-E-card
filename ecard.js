@@ -19,12 +19,12 @@ const ANIMATION = {
  * Generates and downloads a vCard contact file, with an improved method for iOS.
  */
 function saveContact() {
-    const name = 'Talha Zunayeed';
+    const name = 'Mohammad Sadrul Amir Faysal';
     const organization = 'Mind Mentor Overseas';
-    const title = 'Sr. Executive';
-    const officePhone = '+8801329739733';
-    const personalPhone = '+8801681443260';
-    const email = 'talha@mindmentoroverseas.com';
+    const title = 'Assistant Manager';
+    const officePhone = '+8801332547045';
+    const personalPhone = '+8801882137755';
+    const email = 'faysal@mindmentoroverseas.com';
     const secondaryEmail = '';
     const website = 'https://mindmentoroverseas.com';
     const address = 'Mind Mentor Overseas Ltd, Dhaka, Bangladesh';
@@ -84,7 +84,7 @@ END:VCARD`;
  * Opens WhatsApp chat with predefined message
  */
 function openWhatsApp() {
-    const whatsappNumber = '8801329739733';
+    const whatsappNumber = '8801332547045';
     const message = 'Hello! I found your contact through your digital business card.';
     
     try {
