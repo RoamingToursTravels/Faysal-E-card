@@ -1,7 +1,7 @@
 /**
  * E-Card JavaScript - Digital Business Card
  * Author: M S Kamran
- * Organization: Roaming BD
+ * Organization: Mind Mentor Overseas
  * Description: Interactive functionality for digital business card
  */
 
@@ -9,8 +9,9 @@
 // Animation Settings
 const ANIMATION = {
     notificationDuration: 3000,
-    transitionDelay: 100,
-    iconRotationDelay: 150
+    transitionDelay: 50,
+    iconRotationDelay: 200,
+    modeTransitionDuration: 800
 };
 
 // ===== CONTACT MANAGEMENT =====
@@ -18,15 +19,15 @@ const ANIMATION = {
  * Generates and downloads a vCard contact file, with an improved method for iOS.
  */
 function saveContact() {
-    const name = 'MD Samrat Hossain';
-    const organization = 'Roaming Tours & Travels';
-    const title = 'Sr. Executive-Visa';
-    const officePhone = '01329739731';
-    const personalPhone = '01738738637';
-    const email = 'roamingbdvisa01@gmail.com';
+    const name = 'Talha Zunayeed';
+    const organization = 'Mind Mentor Overseas';
+    const title = 'Sr. Executive';
+    const officePhone = '+8801329739733';
+    const personalPhone = '+8801681443260';
+    const email = 'talha@mindmentoroverseas.com';
     const secondaryEmail = '';
-    const website = 'https://www.roamingbd.com';
-    const address = 'House-25 (2nd Floor), Road-02, Sector-03, opposite of Shopno, Rajlokkhi, Uttara, Dhaka, Bangladesh';
+    const website = 'https://mindmentoroverseas.com';
+    const address = 'Mind Mentor Overseas Ltd, Dhaka, Bangladesh';
 
     const nameParts = name.split(' ');
     const lastName = nameParts.pop() || '';
@@ -83,7 +84,7 @@ END:VCARD`;
  * Opens WhatsApp chat with predefined message
  */
 function openWhatsApp() {
-    const whatsappNumber = '8801329739731';
+    const whatsappNumber = '8801329739733';
     const message = 'Hello! I found your contact through your digital business card.';
     
     try {
@@ -134,35 +135,20 @@ function initDarkMode() {
  * @param {HTMLElement} toggleButton - Toggle button element
  */
 function toggleDarkMode(body, icon, toggleButton) {
-    const bgPattern = document.querySelector('.ecard-bg-pattern');
+    // Toggle dark mode class immediately for smooth CSS transitions
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
     
-    if (!bgPattern) return;
-    
-    // Add fade effect during transition
-    bgPattern.style.opacity = '0.7';
+    // Update icon with smooth rotation
+    icon.style.transform = 'rotate(180deg)';
     
     setTimeout(() => {
-        // Toggle dark mode class
-        body.classList.toggle('dark-mode');
-        const isDark = body.classList.contains('dark-mode');
-        
-        // Update icon with smooth rotation
-        icon.style.transform = 'rotate(180deg)';
-        
-        setTimeout(() => {
-            updateDarkModeIcon(icon, isDark);
-            icon.style.transform = 'rotate(0deg)';
-        }, ANIMATION.iconRotationDelay);
-        
-        // Save preference to localStorage
-        localStorage.setItem('darkMode', isDark.toString());
-        
-        // Restore background opacity
-        setTimeout(() => {
-            bgPattern.style.opacity = '1';
-        }, ANIMATION.transitionDelay);
-        
-    }, ANIMATION.transitionDelay);
+        updateDarkModeIcon(icon, isDark);
+        icon.style.transform = 'rotate(0deg)';
+    }, ANIMATION.iconRotationDelay);
+    
+    // Save preference to localStorage
+    localStorage.setItem('darkMode', isDark.toString());
     
     // Add button press animation
     toggleButton.style.transform = 'scale(0.9)';

@@ -20,7 +20,7 @@ body {
     --text-tertiary: rgba(255, 255, 255, 0.6);
     --border-color: rgba(255, 255, 255, 0.25);
     --shadow-color: rgba(31, 38, 135, 0.37);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* ===== DARK MODE VARIABLES ===== */
@@ -36,23 +36,21 @@ body.dark-mode {
 
 /* ===== BACKGROUND PATTERN ===== */
 .ecard-bg-pattern {
-    background-image: url('./Photos/light-pattern.svg');
-    background-size: 200px 200px;
+    background-image: url('./Photos/MindMentorBackground.png');
+    background-size: cover;
     background-position: center;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     min-height: 100vh;
     padding: 20px;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     will-change: background-image;
-    /* Preload dark mode background */
-    background-image: url('./Photos/light-pattern.svg'), url('./Photos/dark-pattern.svg');
-    background-image: url('./Photos/light-pattern.svg');
 }
 
 body.dark-mode .ecard-bg-pattern {
     background-image: url('./Photos/dark-pattern.svg');
     background-size: 200px 200px;
     background-repeat: repeat;
+    background-position: center;
 }
 
 /* ===== DARK MODE TOGGLE BUTTON ===== */
@@ -72,7 +70,7 @@ body.dark-mode .ecard-bg-pattern {
     height: 50px;
     border-radius: 50%;
     font-size: 1.2rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
@@ -106,8 +104,8 @@ body.dark-mode .btn-dark-toggle:hover {
     box-shadow: 0 8px 32px 0 var(--shadow-color);
     color: var(--text-primary);
     overflow: visible;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, background, border-color, box-shadow;
     transform: translateZ(0);
     position: relative;
 }
@@ -179,7 +177,7 @@ body.dark-mode .btn-dark-toggle:hover {
     margin-bottom: 5px;
     letter-spacing: 0.5px;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 body.dark-mode .ecard-employee-id {
@@ -193,7 +191,7 @@ body.dark-mode .ecard-employee-id {
     border-radius: 20px;
     font-weight: 300;
     color: var(--text-primary);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     overflow: hidden;
 }
 
